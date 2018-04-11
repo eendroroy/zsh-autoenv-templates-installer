@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 
 SCRIPT_ROOT=${0:A:h}
-source "${SCRIPT_ROOT}/../autoenv-templates/__TEMPLATE_NAMES.zsh"
+TEMPLATE_ROOT="${SCRIPT_ROOT}/.."
+
+source "${TEMPLATE_ROOT}/autoenv-templates/__TEMPLATE_NAMES.zsh"
 
 if [[ ${__TEMPLATE_NAMES[(i)$1]} > $#__TEMPLATE_NAMES ]]; then
 	(>&2 echo "Template for ${1} not available.")
@@ -13,9 +15,15 @@ fi
 [[ -z ${ATI_ENV_OUT} ]] && ATI_ENV_OUT=.env.out
 
 echo
-echo "  ---> Installing template for '${1}'"
-echo "       into '${ATI_ENV_IN}' and '${ATI_ENV_OUT}' ..."
-echo
+echo "  ---> Installing template for '${1}' ..."
 
-\cp "${SCRIPT_ROOT}/autoenv-templates/${1}/env.in" "${ATI_ENV_IN}"
-\cp "${SCRIPT_ROOT}/autoenv-templates/${1}/env.out" "${ATI_ENV_OUT}"
+echo "     > ${1}/env.in > ${ATI_ENV_IN} ..."
+\cp "${TEMPLATE_ROOT}/autoenv-templates/${1}/env.in" "${ATI_ENV_IN}"
+
+echo "     > ${1}/env.out > ${ATI_ENV_OUT} ..."
+\cp "${TEMPLATE_ROOT}/autoenv-templates/${1}/env.out" "${ATI_ENV_OUT}"
+
+echo "  ---> Done installing."
+
+echo
+unset SCRIPT_ROOT TEMPLATE_ROOT
