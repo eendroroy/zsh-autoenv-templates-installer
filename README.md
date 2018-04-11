@@ -1,7 +1,5 @@
 # zsh-autoenv-templates-installer
 
-**Installation tool to install [autoenv-templates](https://github.com/eendroroy/autoenv-templates) to use with [autoenv](https://github.com/zpm-zsh/autoenv)**
-
 [![Contributors](https://img.shields.io/github/contributors/eendroroy/zsh-autoenv-templates-installer.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer/graphs/contributors)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/eendroroy/zsh-autoenv-templates-installer/master.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer)
 [![license](https://img.shields.io/github/license/eendroroy/zsh-autoenv-templates-installer.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer/blob/master/LICENSE)
@@ -10,6 +8,47 @@
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/eendroroy/zsh-autoenv-templates-installer.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer/issues?q=is%3Aissue+is%3Aclosed)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/eendroroy/zsh-autoenv-templates-installer.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer/pulls)
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/eendroroy/zsh-autoenv-templates-installer.svg)](https://github.com/eendroroy/zsh-autoenv-templates-installer/pulls?q=is%3Apr+is%3Aclosed)
+
+**Installation tool to install [autoenv-templates](https://github.com/eendroroy/autoenv-templates) to use with [autoenv](https://github.com/zpm-zsh/autoenv)**
+
+## Usage
+
+```bash
+    Usage:
+        ati help
+        ati {template_name}
+
+    Example:
+        ati python
+        ati java
+        ati ruby
+```
+
+**Print help menu**
+
+```bash
+ati help
+```
+
+**Install a Template**
+
+_java_
+
+```bash
+ati java
+```
+
+_python_
+
+```bash
+ati python
+```
+
+_ruby_
+
+```bash
+ati ruby
+```
 
 ## Contributing
 
