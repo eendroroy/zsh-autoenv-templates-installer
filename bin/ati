@@ -1,5 +1,28 @@
 #!/usr/bin/env zsh
 
+function ati_help() {
+	echo
+	echo "    Usage:"
+	echo "        ati help"
+	echo "        ati {template_name}"
+	echo
+	echo "    Example:"
+	echo "        ati ruby"
+	echo
+}
+
+if [[ "$#" -ne 1 ]]; then
+	echo
+	(>&2 echo "Requires exactly one template name.")
+	ati_help
+	return 1
+fi
+
+if [[ "${1}" == "help" ]]; then
+	ati_help
+	return 0
+fi
+
 SCRIPT_ROOT=${0:A:h}
 TEMPLATE_ROOT="${SCRIPT_ROOT}/../autoenv-templates"
 
