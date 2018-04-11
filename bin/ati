@@ -36,19 +36,19 @@ if [[ ${__TEMPLATE_NAMES[(i)$1]} > $#__TEMPLATE_NAMES ]]; then
 	return 1
 fi
 
-[[ -z ${ATI_ENV_IN} ]]  && ATI_ENV_IN=.env.in
-[[ -z ${ATI_ENV_OUT} ]] && ATI_ENV_OUT=.env.out
+[[ -z ${AUTOENV_IN_FILE} ]]  && AUTOENV_IN_FILE=.env
+[[ -z ${AUTOENV_OUT_FILE} ]] && AUTOENV_OUT_FILE=.out
 
 echo
 echo "  ---> Installing template for '${1}' ..."
 
-echo "     > ${1}/env.in > ${ATI_ENV_IN} ..."
-\cp "${TEMPLATE_ROOT}/${1}/env.in" "${ATI_ENV_IN}"
+echo "     > ${1}/env.in > ${AUTOENV_IN_FILE} ..."
+\cp "${TEMPLATE_ROOT}/${1}/env.in" "${AUTOENV_IN_FILE}"
 
-echo "     > ${1}/env.out > ${ATI_ENV_OUT} ..."
-\cp "${TEMPLATE_ROOT}/${1}/env.out" "${ATI_ENV_OUT}"
+echo "     > ${1}/env.out > ${AUTOENV_OUT_FILE} ..."
+\cp "${TEMPLATE_ROOT}/${1}/env.out" "${AUTOENV_OUT_FILE}"
 
 echo "  ---> Done installing."
 
 echo
-unset SCRIPT_ROOT TEMPLATE_ROOT
+unset SCRIPT_ROOT TEMPLATE_ROOT ati_help
