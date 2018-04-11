@@ -7,6 +7,8 @@ function ati_help() {
 	echo "        ati {template_name}"
 	echo
 	echo "    Example:"
+	echo "        ati python"
+	echo "        ati java"
 	echo "        ati ruby"
 	echo
 }
